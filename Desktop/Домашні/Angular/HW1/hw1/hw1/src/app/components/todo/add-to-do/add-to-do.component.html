@@ -1,0 +1,23 @@
+<div class="myTodos">
+  <div class="input">
+    <div class="form">
+      <input class="input-form" type="text" #newToDo />
+    </div>
+    <div class="btn">
+      <button
+        class="input-btn"
+        (click)="addTodo(newToDo.value); newToDo.value = ''"
+      >
+        +
+      </button>
+    </div>
+  </div>
+
+  <div class="todos">
+    <div class="toDoItem" *ngFor="let todo of todos">
+      <p>{{ todo.name }}</p>
+
+      <button class="toDoBtn" (click)="deleteToDo(todo)">-</button>
+    </div>
+  </div>
+</div>
